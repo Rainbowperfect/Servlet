@@ -1,6 +1,6 @@
-package org.perosn.servlet; /**
+package org.perosn.servlet;
+/**
  * ${DESCRIPTION}
- *
  * @author RainbowPerferct
  * @create 2018/9/20/23:59
  */
@@ -19,7 +19,7 @@ import java.util.Properties;
  *
  *  ${DESCRIPTION}
  *  @author RainbowPerferct/zero
- *  @create 2018/9/20/23:59
+ *
  *
  */
 @WebServlet(name = "PropertiesServlet")
@@ -40,6 +40,6 @@ public class PropertiesServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        doPost(request,response);
     }
 }
