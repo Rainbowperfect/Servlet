@@ -11,10 +11,9 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-
 /**
- *面向对象设计的六大基本原则
- *单一职责原则，开放封闭原则(对拓展开放对修改封闭),依赖倒置(依赖抽象不依赖具体),迪米特法则，里氏替换原则，接口隔离原则
+ * 面向对象设计的六大基本原则
+ * 单一职责原则，开放封闭原则(对拓展开放对修改封闭),依赖倒置(依赖抽象不依赖具体),迪米特法则，里氏替换原则，接口隔离原则
  */
 public class loginServlet extends HttpServlet {
     @Override
@@ -27,28 +26,28 @@ public class loginServlet extends HttpServlet {
         User user = dao.findUser(username, password);
         //获取ServletContext对象
         ServletContext servletContext = getServletContext();
-        if (user!=null) {
+        if (user != null) {
             Integer obj = (Integer) servletContext.getAttribute("count");
-            int count=0;
-            if (obj!=null) {
-                count=obj;
+            int count = 0;
+            if (obj != null) {
+                count = obj;
             }
             //登录成功之后，将count+1
-            count ++;
+            count++;
             //将这个count存放到ServletContext中
-            servletContext.setAttribute("count",count);
+            servletContext.setAttribute("count", count);
             //设置响应跳转到success.html
 
             response.setStatus(302);
-            response.setHeader("Location","suffix.jsp");
-        }else{
+            response.setHeader("Location", "suffix.jsp");
+        } else {
             System.out.println("登录失败");
         }
 
     }
+
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,
-            IOException {
-        doPost(request,response);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        doPost(request, response);
     }
 }

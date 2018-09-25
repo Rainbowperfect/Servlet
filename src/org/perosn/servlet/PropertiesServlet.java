@@ -1,9 +1,4 @@
 package org.perosn.servlet;
-/**
- * ${DESCRIPTION}
- * @author RainbowPerferct
- * @create 2018/9/20/23:59
- */
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -16,11 +11,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 /**
- *
- *  ${DESCRIPTION}
- *  @author RainbowPerferct/zero
- *
- *
+ * @author RainbowPerferct
  */
 @WebServlet(name = "PropertiesServlet")
 public class PropertiesServlet extends HttpServlet {
